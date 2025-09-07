@@ -51,9 +51,42 @@
     </header>
     <main>
 
-        <section>
+        
+      <section class="grid grid-cols-6 max-w-[1650px] mx-auto gap-[30px]">
+        <!-- Catagory Section -->
+        <div class="catagoryLeft bg-red">
+          <h1 class="text-xl font-semibold text-[#000000] pb-4">Categories</h1>
+          <button
+            id="allTreeBtn"
+            class="w-full text-[#1F2937] text-left px-2 CatagoryButtonD rounded-md p-2 removeCatarogyDesign hover:bg-[#15803D]"
+          >
+            All trees
+          </button>
+          <div id="CatagoryLeft" class="text-left"></div>
+        </div>
+        <!-- Products Section starts from here -->
+        <div id="spinbar" class="flex justify-center px-1 col-span-4 hidden">
+          <span class="loading loading-dots loading-xl"></span>
+        </div>
+        <div
+          id="Product-container"
+          class="productcenter col-span-4 grid grid-cols-3 gap-[30px] auto-rows-fr"
+        ></div>
+    
+        <!-- Cart sections starts from here -->
+        <div  class="cartRight rounded-2xl bg-white p-4">
+            <h1 class="font-semibold text-xl text-[#000000]">Your Cart</h1>
+          
+            <div id="carContainer">
 
-        </section>
+            </div>
+            <div class="flex justify-between  font-semibold text-[16px] text-[#1F2937]">
+             <h2>Total:</h2>
+             <h2>৳ <span id="totalAmount"> 0</span></h2>
+            </div>
+        </div>
+       
+      </section>
         <!-- about-section -->
 
         <section class="about-campaign">
