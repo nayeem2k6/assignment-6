@@ -6,6 +6,7 @@ const removeBgOfCatagory = () => {
     catagorybutton.classList.remove("CatagoryButtonD");
   }
 };
+// catagory list call API
 
 const catagoryLoad = async () => {
   const res = await fetch(
@@ -119,7 +120,7 @@ const modalFunc = (id) => {
 
 const displayModal = (data) => {
   // const modalDetails = document.getElementById("modalDetails");
-  const modalDetails = document.getElementById("my_modal_5");
+  const modalDetails = document.getElementById("my_model");
   modalDetails.innerHTML = " ";
   const newModalDetails = document.createElement("div");
   newModalDetails.innerHTML = `
@@ -153,10 +154,10 @@ const displayModal = (data) => {
 `;
   modalDetails.appendChild(newModalDetails);
 
-  document.getElementById("my_modal_5").showModal(data);
+  document.getElementById("my_modal").showModal(data);
 };
 
-// Cart Funcload
+// Cart Funcation
 const CartFunc = (id) => {
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
@@ -184,7 +185,7 @@ const Storecart = (data) => {
   totalAmountElement.innerText = totalAmount;
   const delAmount=()=>{
     
- totalAmount -= parseInt(data.price);
+ totalAmount -= parseInt(price);
  totalAmountElement.innerText = totalAmount;
   }
 

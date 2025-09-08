@@ -10,10 +10,15 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <style>
+  *{
+    font-family: "inter"sans-serif;
+   }
+
 
 </style>
 </head>
 <body>
+  <!-- header-section -->
     <header>
         <!-- nav-section -->
         <nav class="flex justify-between text-center bg-[#15803D]">
@@ -49,37 +54,41 @@
         </div>
 
     </header>
-    <main>
 
-        
-      <section class="grid grid-cols-6 max-w-[1650px] mx-auto gap-[30px]">
-        <!-- Catagory Section -->
-        <div class="catagoryLeft bg-red">
+<!-- main-section -->
+
+    <main class="bg-[#DCFCE7]">
+      <h1 class="text-center text-[32px] text-[#1F2937] font-semibold pb-10 pt-24">Choose your Trees</h1>
+
+        <!-- catagory-products-cart-section -->
+      
+      <section class="grid grid-cols-1 sm:grid-cols-6 sm:col-span-1 max-w-[1650px] mx-auto sm:gap-[30px]">
+        <!-- catagoryLeft-section -->
+         <div class="catagoryLeft bg-red">
           <h1 class="text-xl font-semibold text-[#000000] pb-4">Categories</h1>
           <button
-            id="allTreeBtn"
-            class="w-full text-[#1F2937] text-left px-2 CatagoryButtonD rounded-md p-2 removeCatarogyDesign hover:bg-[#15803D]"
-          >
+            id="allTreeBtn"class="w-full text-[#1F2937] text-left px-2 CatagoryButtonD rounded-md p-2 removeCatarogyDesign hover:bg-[#15803D]">
             All trees
           </button>
           <div id="CatagoryLeft" class="text-left"></div>
         </div>
-        <!-- Products Section starts from here -->
+
+
+        <!-- Products-Section-->
         <div id="spinbar" class="flex justify-center px-1 col-span-4 hidden">
           <span class="loading loading-dots loading-xl"></span>
         </div>
         <div
           id="Product-container"
-          class="productcenter col-span-4 grid grid-cols-3 gap-[30px] auto-rows-fr"
-        ></div>
+          class="productcenter col-span-4 grid grid-cols-3 gap-[30px] auto-rows-fr">
+        </div>
+
     
-        <!-- Cart sections starts from here -->
-        <div  class="cartRight rounded-2xl bg-white p-4">
+        <!-- Cart-section-->
+        <div  class="cartRight rounded-2xl bg-white  p-4">
             <h1 class="font-semibold text-xl text-[#000000]">Your Cart</h1>
           
-            <div id="carContainer">
-
-            </div>
+            <div id="carContainer"></div>
             <div class="flex justify-between  font-semibold text-[16px] text-[#1F2937]">
              <h2>Total:</h2>
              <h2>৳ <span id="totalAmount"> 0</span></h2>
@@ -87,6 +96,15 @@
         </div>
        
       </section>
+
+      <section>
+        <dialog id="my_model" class="model model-bottom sm:model-middle">
+
+        </dialog>
+      </section>
+
+
+
         <!-- about-section -->
 
         <section class="about-campaign">
@@ -162,12 +180,15 @@
   </div>
 </section>
     </main>
+
+    <!-- footer-section -->
     <footer>
         <div class="max-w-[1920px] mx-auto h-[72px] bg-[#14532D] flex justify-center items-center">
             <p class="text-center text-white"> © 2025 Green Earth. All Rights Reserved.</p>
         </div>
 
     </footer>
+
     
 
 <script src="./index.js"></script>
