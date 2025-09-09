@@ -1,12 +1,6 @@
 
 const catagoryButtons = document.getElementsByClassName("removeCatarogyDesign");
 
-const removeBgOfCatagory = () => {
-  for (const catagorybutton of catagoryButtons) {
-    catagorybutton.classList.remove("CatagoryButtonD");
-  }
-};
-
 
 
 // catagory list call API
@@ -36,7 +30,6 @@ const displayCatagory = (datas) => {
 
 
 
-
 // spinbar here
 const spinbar = (situation) => {
   if (situation == true) {
@@ -47,6 +40,10 @@ const spinbar = (situation) => {
     document.getElementById("Product-container").classList.remove("hidden");
   }
 };
+
+
+
+
 
 const allplantsLoad = () => {
   spinbar(true);
@@ -68,6 +65,13 @@ alltreeBtn.addEventListener("click", () => {
 allplantsLoad();
 
 
+
+const removeBgOfCatagory = () => {
+  for (const catagorybutton of catagoryButtons) {
+    catagorybutton.classList.remove("CatagoryButtonD");
+  }
+};
+
 // products load here
 const loadProducts = async (id) => {
   spinbar(true);
@@ -82,6 +86,10 @@ const loadProducts = async (id) => {
 
   document.getElementById(id).classList.add("CatagoryButtonD");
 };
+
+
+
+
 
 // products display here
 const displayProducts = (products) => {
@@ -118,50 +126,7 @@ const displayProducts = (products) => {
   spinbar(false);
 };
 
-const modalFunc = (id) => {
-  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
-    .then((res) => res.json())
-    .then((data) => displayModal(data.plants));
-};
 
-const displayModal = (data) => {
-  // const modalDetails = document.getElementById("modalDetails");
-  const modalDetails = document.getElementById("my_model");
-  modalDetails.innerHTML = " ";
-  const newModalDetails = document.createElement("div");
-  newModalDetails.innerHTML = `
-  <div class="modal-box">
-<div class="rounded-lg bg-white p-2  ">
-            <img class="w-full object-cover rounded-lg" src="${data.image}" alt="" />
-            <h3  class="font-semibold text-sm text-[#1F2937] mt-3">
-              ${data.name}
-            </h3>
-            <p class="text-[16px] text-[#1d1d1f] my-3 ">
-              ${data.description}
-            </p>
-            <div class="flex justify-between items-center">
-              <h3 class="bg-[#DCFCE7]  px-3 py-2 rounded-full text-[#15803D]">
-                ${data.category}
-              </h3>
-              <h3 class="text-[#1F2937]">৳ <span>${data.price}</span></h3>
-            </div>
-           
-           
-          </div>
-          <div class="modal-action">
-                <form method="dialog">
-                  <!-- if there is a button in form, it will close the modal -->
-                  <button class="btn">Close</button>
-                </form>
-              </div>
-              </div>
-
-
-`;
-  modalDetails.appendChild(newModalDetails);
-
-  document.getElementById("my_modal").showModal(data);
-};
 
 // Cart Funcation
 const CartFunc = (id) => {
