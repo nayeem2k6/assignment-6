@@ -6,6 +6,9 @@ const removeBgOfCatagory = () => {
     catagorybutton.classList.remove("CatagoryButtonD");
   }
 };
+
+
+
 // catagory list call API
 
 const catagoryLoad = async () => {
@@ -17,7 +20,22 @@ const catagoryLoad = async () => {
   // console.log(data.);
 };
 
-// All Catagory plants here
+// Catagory Display here
+const displayCatagory = (datas) => {
+  // console.log(data);
+  const catagoryContainer = document.getElementById("CatagoryLeft");
+  datas.forEach((data) => {
+    catagoryContainer.innerHTML += `
+        <button  onclick="loadProducts(${data.id})" id="${data.id}"  class=" bg-[#DCFCE7] border-none font-medium py-2 my-2 text-[#1F2937] cursor-default w-full text-left hover:bg-[#15803D] px-2 rounded-md removeCatarogyDesign ">
+     ${data.category_name}
+    </button>
+        `;
+  });
+};
+
+
+
+
 
 // spinbar here
 const spinbar = (situation) => {
@@ -49,18 +67,6 @@ alltreeBtn.addEventListener("click", () => {
 });
 allplantsLoad();
 
-// Catagory Display here
-const displayCatagory = (datas) => {
-  // console.log(data);
-  const catagoryContainer = document.getElementById("CatagoryLeft");
-  datas.forEach((data) => {
-    catagoryContainer.innerHTML += `
-        <button  onclick="loadProducts(${data.id})" id="${data.id}"  class=" bg-[#DCFCE7] border-none font-medium py-2 my-2 text-[#1F2937] cursor-default w-full text-left hover:bg-[#15803D] px-2 rounded-md removeCatarogyDesign ">
-     ${data.category_name}
-    </button>
-        `;
-  });
-};
 
 // products load here
 const loadProducts = async (id) => {
@@ -134,7 +140,7 @@ const displayModal = (data) => {
               ${data.description}
             </p>
             <div class="flex justify-between items-center">
-              <h3 class="bg-[#DCFCE7] px-3 py-2 rounded-full text-[#15803D]">
+              <h3 class="bg-[#DCFCE7]  px-3 py-2 rounded-full text-[#15803D]">
                 ${data.category}
               </h3>
               <h3 class="text-[#1F2937]">৳ <span>${data.price}</span></h3>
